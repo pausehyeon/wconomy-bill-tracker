@@ -19,25 +19,28 @@ $ git clone https://github.com/pausehyeon/wconomy-bill-tracker.git
 
 2. Download A Dockerfile
 ```
-# /d/workspace/devops
-$ mkdir devops && cd devops && curl -s https://raw.githubusercontent.com/pausehyeon/devops-environment/master/java/v1/Dockerfile --output Dockerfile
+# /d/workspace/wconomy-bill-tracker/billtracker
+$ cd wconomy-bill-tracker/billtracker && curl -s https://raw.githubusercontent.com/pausehyeon/devops-environment/master/java/v1/Dockerfile --output Dockerfile
 ```
 
 3. Make executable JAR
 ```
 # /d/workspace/wconomy-bill-tracker/billtracker
-$ cd ../wconomy-bill-tracker/billtracker/ && ./gradlew build
+$ ./gradlew build
+
+# (Optional) If you got error message about permission(e.g. The file './gradlew' is not executable by this user), Make the gradle wrapper executable and Try again.
+$ chmod +x ./gradlew
 ```
 
 4. Build Docker Image
 ```
-# /d/workspace/devops
-$ cd ../../devops && docker build --build-arg JAR_FILE=../wconomy-bill-tracker/billtracker/build/libs/*.jar -t wconomy.pe.kr/billtracker .
+# /d/workspace/wconomy-bill-tracker/billtracker
+$ docker build -t wconomy.pe.kr/billtracker:latest .
 ```
 
 5. Run Docker Container
 ```
-$ docker run -p 8080:8080 wconomy.pe.kr/billtracker
+$ docker run -p 8080:8080 wconomy.pe.kr/billtracker:latest
 ```
 
 6. Open a browser and Check http://localhost:8000

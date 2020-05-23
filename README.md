@@ -35,12 +35,12 @@ $ chmod +x ./gradlew
 4. Build Docker Image
 ```
 # /d/workspace/wconomy-bill-tracker/billtracker
-$ docker build -t wconomy.pe.kr/billtracker:latest .
+$ docker build -t pausehyeon/billtracker:latest .
 ```
 
 5. Run Docker Container
 ```
-$ docker run -p 8080:8080 wconomy.pe.kr/billtracker:latest
+$ docker run -p 8080:8080 pausehyeon/billtracker:latest
 ```
 
 6. Open a browser and Check http://localhost:8000

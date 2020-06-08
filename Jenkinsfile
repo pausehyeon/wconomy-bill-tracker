@@ -14,7 +14,7 @@ pipeline {
         }        
         stage('Prepare') {
             steps {
-                dir('${workDirectory}') {
+                dir("${workDirectory}") {
                     sh 'pwd'
                     sh 'chmod +x ./gradlew'
                     sh 'ls'
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Build Jar') {
             steps {
-                dir('${workDirectory}') {
+                dir("${workDirectory}") {
                    sh './gradlew build'
                 }
             }

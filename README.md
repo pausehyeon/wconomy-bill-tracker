@@ -1,12 +1,34 @@
 # Wconomy Bill Tracker
 
 ## Getting Started
-### Prerequisites
+
+### Running Latest Version
+
+#### Prerequisites
+- Install [Docker Desktop](https://docs.docker.com/docker-for-mac/install/).
+
+#### Running
+1. Pull Docker Image
+```
+$ docker pull pausehyeon/billtracker:latest
+```
+
+2. Run Docker Container
+```
+$ docker run -p 8080:8080 pausehyeon/billtracker:latest
+```
+
+3. Open a browser and Check http://localhost:8080
+
+
+### Building Running Locally
+
+#### Prerequisites
 - Install [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html).
 - Install [Docker Desktop](https://docs.docker.com/docker-for-mac/install/).
 - Install [Git](https://git-scm.com/downloads).
 
-### Running
+#### Running
 Make a new workspace(e.g. /d/workspace).
 Right click from the workspace directory; then you will see 'Git Bash Here'.
 Now, Follow next steps from git bash.
@@ -43,4 +65,4 @@ $ docker build -t pausehyeon/billtracker:latest .
 $ docker run -p 8080:8080 pausehyeon/billtracker:latest
 ```
 
-6. Open a browser and Check http://localhost:8000
+6. Open a browser and Check http://localhost:8080

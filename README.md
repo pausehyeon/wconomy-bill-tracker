@@ -21,7 +21,7 @@ $ docker run -p 8080:8080 pausehyeon/billtracker:latest
 3. Open a browser and Check http://localhost:8080
 
 
-### Building Running Locally
+### Building And Running Locally
 
 #### Prerequisites
 - Install [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html).

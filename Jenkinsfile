@@ -14,15 +14,18 @@ pipeline {
         }        
         stage('Prepare') {
             steps {
-                sh 'cd $workDirectory'
-                sh 'pwd'
-                sh 'chmod +x ./gradlew'
-                sh 'ls'
+                dir('$workDirectory') {
+                    sh 'pwd'
+                    sh 'chmod +x ./gradlew'
+                    sh 'ls'
+                }
             }
         }
         stage('Build Jar') {
             steps {
-                sh './gradlew build'
+                dir('$workDirectory') {
+                   sh './gradlew build'
+                }
             }
         }
         stage('Build docker image') {

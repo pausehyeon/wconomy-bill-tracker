@@ -30,8 +30,10 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                sh 'curl -s $dockerFilePath --output Dockerfile'
-                sh 'docker build -t $registry:latest .'
+                dir("${workDirectory}") {
+                    sh 'curl -s $dockerFilePath --output Dockerfile'
+                    sh 'docker build -t $registry:latest .'
+                }
             }
         }
         stage('Deploy docker image') {
